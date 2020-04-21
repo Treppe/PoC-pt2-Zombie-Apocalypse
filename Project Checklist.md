@@ -2,7 +2,13 @@
 
 [TOC]
 
-## Phase 1 - Apocalypse class
+
+
+[Phase 1 - Apocalypse class](#Phase-1)
+
+[Phase 2](#Phase-2)
+
+## Phase 1 - Apocalypse Class
 
 In phase one, we will implement the basic methods for the Apocalypse class. We suggest that you start from [this template](http://www.codeskulptor.org/#poc_zombie_template.py). Note that the Apocalypse class is a subclass of the [Grid class](http://www.codeskulptor.org/#poc_grid.py) and inherits all of its methods.
 
