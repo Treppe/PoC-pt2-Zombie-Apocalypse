@@ -11,33 +11,33 @@ The template contains an implementation of the _ _init_ _ method for the Apocaly
 
 ### 1. def clear(self):
 
-Reset all cells in the grid to be passable and reinitialize the human and zombie lists to be empty. Remember that you can use the clear method from the poc_grid.Grid class to clear the grid of impassable cells. Examine the implementation of the _ _init_ _ method for how to call this method.
+Reset all cells in the grid to be passable and reinitialize the human and zombie lists to be empty. Remember that you can use the clear method from the poc_grid. Grid class to clear the grid of impassable cells. Examine the implementation of the _ _init_ _ method for how to call this method.
 
-- [ ]  1.1. Implement test for method
-- [ ]  1.2. Implement method
-- [ ] 1.3. Test method
-- [ ] 1.4. Fix bugs
-- [ ] 1.5. Commit changes
+- [x]  1.1. Implement test for method
+- [x]  1.2. Implement method
+- [x] 1.3. Test method
+- [x] 1.4. Fix bugs
+- [x] 1.5. Commit changes
 
-### 2. def add_zombies(self,  row, col)
+### 2. def add_zombie(self,  row, col)
 
 Add a zombie to the zombie list at the supplied row and column.
 
-- [ ]  2.1. Implement test for method
-- [ ]  2.2. Implement method
-- [ ] 2.3. Test method
-- [ ] 2.4. Fix bugs
-- [ ] 2.5. Commit changes
+- [x]  2.1. Implement test for method
+- [x]  2.2. Implement method
+- [x] 2.3. Test method
+- [x] 2.4. Fix bugs
+- [x] 2.5. Commit changes
 
-### 3. def num_zombie(self, row, col)
+### 3. def num_zombie(self)
 
 Return the number of zombies in the zombie list.
 
-- [ ]  3.1. Implement test for method
-- [ ]  3.2. Implement method
-- [ ] 3.3. Test method
-- [ ] 3.4. Fix bugs
-- [ ] 3.5. Commit changes
+- [x]  3.1. Implement test for method
+- [x]  3.2. Implement method
+- [x] 3.3. Test method
+- [x] 3.4. Fix bugs
+- [x] 3.5. Commit changes
 
 ### 4. def zombies(self)
 
@@ -59,7 +59,7 @@ Generator that allows you to iterate over zombies in the zombie list. Here, a zo
 - [ ] 5.4. Fix bugs
 - [ ] 5.5. Commit changes
 
-### 6. defnum_humans(self)
+### 6. def num_humans(self)
 
 Return the number of humans in the human list.
 
@@ -69,7 +69,7 @@ Return the number of humans in the human list.
 - [ ] 6.4. Fix bugs
 - [ ] 6.5. Commit changes
 
-### 7. defhumans(self)
+### 7. def humans(self)
 
  Generator that allows you to iterate over humans in the human list. The generator **must** yield the humans in the order they were added (even if they have moved). Again, you can use a generator to implement this method in one or two lines of code.
 
