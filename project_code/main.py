@@ -41,13 +41,20 @@ class Apocalypse(poc_grid.Grid):
             self._human_list = list(human_list)  
         else:
             self._human_list = []
-        
+    
+    def __str__(self):
+        return str(str(poc_grid.Grid.__str__(self)) + "\n" +
+                "HUMAN LIST: " + str(self._human_list) + "\n" +
+                "ZOMBIE LIST: " + str(self._zombie_list))
+    
     def clear(self):
         """
         Set cells in obstacle grid to be empty
         Reset zombie and human lists to be empty
         """
-        pass
+        poc_grid.Grid.clear(self)
+        self._zombie_list = []
+        self._human_list = []
         
     def add_zombie(self, row, col):
         """

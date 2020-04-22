@@ -4,6 +4,7 @@ https://docs.python.org/2/library/unittest.html
 Note that code is designed to be much simpler than unittest
 and does NOT replicate unittest functionality
 """
+import user47_TYjGULYEir_13 as zombie
 
 class TestSuite:
     """
@@ -36,5 +37,23 @@ class TestSuite:
         """
         msg = "Ran " + str(self.total_tests) + " tests. "
         msg += str(self.failures) + " failures."
+        print
         print msg
                
+suite = TestSuite()
+
+# def clear(self) test:
+obstacle_list = [(1, 2), (3, 4)]
+zombie_list = [(3, 3), (1, 1)]
+human_list = [(2, 4), (4, 3)]
+apoc = zombie.Apocalypse(5, 5, obstacle_list, zombie_list, human_list)
+print "Apoc full:"
+print apoc
+print
+apoc.clear()
+print "Apoc clear:"
+print apoc
+print
+
+
+
