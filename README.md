@@ -2,8 +2,6 @@
 
 My implemetation of Mini-project #5 - Cookie Clicker for course "[Principles of Computing (Part 2)](https://www.coursera.org/learn/principles-of-computing-2?specialization=computer-fundamentals)" by RICE University on Coursera.
 
-
-
 ### Overview (from course project description page)
 
 In this mini-project, we will create a simulation of zombies and humans interacting on a grid. As in the movies, our zombies are hungry for human brains. As a result, zombies chase humans and humans flee from zombies. To keep our simulation manageable, the positions of the zombies and humans will be restricted to a grid. In our simulation, zombies are not very agile and can only move up, down, left or right in one step of the simulation. On the other hand, humans are more agile and can move in these four directions as well as the four neighboring diagonal directions. If a zombie catches a human by positioning itself in the same cell, the zombie enjoys some delicious human brains. Being a Computer Scientist, the human has plenty of brains to spare and continues to live on in our simulation ☺.

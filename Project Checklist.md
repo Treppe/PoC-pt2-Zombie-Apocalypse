@@ -1,12 +1,7 @@
 # Project Checklist
 
-[TOC]
-
-
-
 [Phase 1 - Apocalypse class](#Phase-1—Apocalypse-Class)
-
-[Phase 2](#Phase-2)
+		[Phase 2](#Phase-2)
 
 ## Phase 1 - Apocalypse Class
 
