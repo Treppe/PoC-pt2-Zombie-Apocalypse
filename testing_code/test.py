@@ -4,7 +4,7 @@ https://docs.python.org/2/library/unittest.html
 Note that code is designed to be much simpler than unittest
 and does NOT replicate unittest functionality
 """
-import user47_TYjGULYEir_13 as zombie
+import user47_TYjGULYEir_15 as zombie
 
 class TestSuite:
     """
@@ -54,6 +54,11 @@ apoc.clear()
 print "Apoc clear:"
 print apoc
 print
+
+# def add_zombies(self, row, col) test:
+apoc = zombie.Apocalypse(5, 5)
+apoc.add_zombie(1, 3)
+print apoc
 
 
 

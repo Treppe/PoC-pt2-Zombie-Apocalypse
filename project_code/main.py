@@ -60,7 +60,7 @@ class Apocalypse(poc_grid.Grid):
         """
         Add zombie to the zombie list
         """
-        pass
+        self._zombie_list.append((row, col))
                 
     def num_zombies(self):
         """
