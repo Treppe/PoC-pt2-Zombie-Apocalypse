@@ -4,7 +4,7 @@ https://docs.python.org/2/library/unittest.html
 Note that code is designed to be much simpler than unittest
 and does NOT replicate unittest functionality
 """
-import user47_lJ2dChjO1O_9 as zombie
+import user47_lJ2dChjO1O_10 as zombie
 
 class TestSuite:
     """
@@ -74,19 +74,25 @@ suite.run_test(apoc.num_zombies(), 0, "Test 5c: num_zombies()")
 
 # def zombies(self) test:
 apoc = zombie.Apocalypse(5, 5)
-suite.run_test(apoc.zombies(), None, "Test 6a: zombies()")
+suite.run_test(list(apoc.zombies()), [], "Test 6a: zombies()")
 apoc.add_zombie(1, 1)
 apoc.add_zombie(2 ,2)
 apoc.add_zombie(3, 3)
-suite.run_test(apoc.zombies(), [(1, 1), (2, 2), (3, 3)], "Test 6b: zombie()")
+suite.run_test(list(apoc.zombies()), [(1, 1), (2, 2), (3, 3)], "Test 6b: zombie()")
 
-# def zombies(self) test:
+# def add_human(self, row, col) test:
 apoc = zombie.Apocalypse(5, 5)
 apoc.add_human(1, 1)
 apoc.add_human(2, 2)
 suite.run_test(apoc.get_humans(), [(1, 1), (2, 2)], "Test #7a: add_human()")
 apoc.add_human(1, 1)
 suite.run_test(apoc.get_humans(), [(1, 1), (2, 2)], "Test #7b: add_human()")
+
+# def num_humans(self) test:
+apoc = zombie.Apocalypse(5, 5)
+suite.run_test(apoc.num_humans(), 0, "Test #8a: num_humans()")
+apoc.add_human(1, 1)
+suite.run_test(apoc.num_humans(), 1, "Test #8b: num_humans()")
 
 suite.report_results()
 

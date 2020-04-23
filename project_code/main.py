@@ -94,7 +94,7 @@ class Apocalypse(poc_grid.Grid):
         """
         Return number of humans
         """
-        return 0
+        return len(self._human_list)
     
     def humans(self):
         """
