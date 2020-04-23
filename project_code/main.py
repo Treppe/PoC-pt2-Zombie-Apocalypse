@@ -48,9 +48,15 @@ class Apocalypse(poc_grid.Grid):
                 "ZOMBIE LIST: " + str(self._zombie_list))
     
     def get_humans(self):
+        """
+        Returns copy of human list
+        """
         return list(self._human_list)
     
     def get_zombies(self):
+        """
+        Returns copy of zombies list
+        """
         return list(self._zombie_list)
     
     def clear(self):
@@ -128,7 +134,5 @@ class Apocalypse(poc_grid.Grid):
 
 # Start up gui for simulation - You will need to write some code above
 # before this will work without errors
-apoc = Apocalypse(5, 5, zombie_list = [(1,1)], human_list = [(2, 2)])
-print apoc.get_humans()
 
-# poc_zombie_gui.run_gui(Apocalypse(30, 40))
+poc_zombie_gui.run_gui(Apocalypse(30, 40))
