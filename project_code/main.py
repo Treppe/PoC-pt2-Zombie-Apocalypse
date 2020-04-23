@@ -60,7 +60,8 @@ class Apocalypse(poc_grid.Grid):
         """
         Add zombie to the zombie list
         """
-        self._zombie_list.append((row, col))
+        if (row, col) not in self._zombie_list:
+            self._zombie_list.append((row, col))
                 
     def num_zombies(self):
         """
