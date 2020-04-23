@@ -47,6 +47,12 @@ class Apocalypse(poc_grid.Grid):
                 "HUMAN LIST: " + str(self._human_list) + "\n" +
                 "ZOMBIE LIST: " + str(self._zombie_list))
     
+    def get_humans(self):
+        return list(self._human_list)
+    
+    def get_zombies(self):
+        return list(self._zombie_list)
+    
     def clear(self):
         """
         Set cells in obstacle grid to be empty
@@ -120,5 +126,7 @@ class Apocalypse(poc_grid.Grid):
 
 # Start up gui for simulation - You will need to write some code above
 # before this will work without errors
+apoc = Apocalypse(5, 5, zombie_list = [(1,1)], human_list = [(2, 2)])
+print apoc.get_humans()
 
 # poc_zombie_gui.run_gui(Apocalypse(30, 40))

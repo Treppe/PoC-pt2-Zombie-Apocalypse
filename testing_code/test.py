@@ -4,7 +4,7 @@ https://docs.python.org/2/library/unittest.html
 Note that code is designed to be much simpler than unittest
 and does NOT replicate unittest functionality
 """
-import user47_lJ2dChjO1O_3 as zombie
+import user47_lJ2dChjO1O_8 as zombie
 
 class TestSuite:
     """
@@ -44,48 +44,50 @@ class TestSuite:
 suite = TestSuite()
 
 # def clear(self) test:
-#obstacle_list = [(1, 2), (3, 4)]
-#zombie_list = [(3, 3), (1, 1)]
-#human_list = [(2, 4), (4, 3)]
-#apoc = zombie.Apocalypse(5, 5, obstacle_list, zombie_list, human_list)
-#print "Apoc full:"
-#print apoc
-#print
-#apoc.clear()
-#print "Apoc clear:"
-#print apoc
-#print
-#
+obstacle_list = [(1, 2), (3, 4)]
+zombie_list = [(3, 3), (1, 1)]
+human_list = [(2, 4), (4, 3)]
+apoc = zombie.Apocalypse(5, 5, obstacle_list, zombie_list, human_list)
+suite.run_test(apoc.get_humans(), human_list, "Test #1: get_humans()")
+suite.run_test(apoc.get_zombies(), zombie_list, "Test #2: get_zombies()")
+print apoc # Check obstacles
+apoc.clear()
+suite.run_test(apoc.get_humans(), [], "Test #3a: clear()")
+suite.run_test(apoc.get_zombies(), [], "Test #3b: clear()")
+print apoc # Check obstacles
+
 # def add_zombies(self, row, col) test:
-#apoc = zombie.Apocalypse(5, 5)
-#apoc.add_zombie(1, 3)
-#print apoc
+apoc = zombie.Apocalypse(5, 5)
+apoc.add_zombie(1, 3)
+apoc.add_zombie(2, 2)
+suite.run_test(apoc.get_zombies(), [(1, 3), (2, 2)], "Test #4a: add_zombie()")
+apoc.add_zombie(2, 2)
+suite.run_test(apoc.get_zombies(), [(1, 3), (2, 2)], "Test #4b: add_zombie()")
 
 # def num_zombies(self) test:
 zomb_list = [(1,1), (2,2), (3,4)]
 apoc = zombie.Apocalypse(5, 5, zombie_list = zomb_list)
-suite.run_test(apoc.num_zombies(), 3, "Test 3a: num_zombies()")
+suite.run_test(apoc.num_zombies(), 3, "Test 5a: num_zombies()")
 apoc.add_zombie(1, 1)
-suite.run_test(apoc.num_zombies(), 3, "Test 3b: num_zombies()")
+suite.run_test(apoc.num_zombies(), 3, "Test 5b: num_zombies()")
 apoc = zombie.Apocalypse(5, 5)
-suite.run_test(apoc.num_zombies(), 0, "Test 3c: num_zombies()")
+suite.run_test(apoc.num_zombies(), 0, "Test 5c: num_zombies()")
 
 # def zombies(self) test:
 apoc = zombie.Apocalypse(5, 5)
-suite.run_test(apoc.zombies(), None, "Test 4a: zombie()")
+suite.run_test(apoc.zombies(), None, "Test 6a: zombies()")
 apoc.add_zombie(1, 1)
 apoc.add_zombie(2 ,2)
 apoc.add_zombie(3, 3)
-suite.run_test(apoc.zombies(), [(1, 1), (2, 2), (3, 3)]), "Test 4b: zombie()"
+suite.run_test(apoc.zombies(), [(1, 1), (2, 2), (3, 3)]), "Test 6b: zombie()"
 
 # def zombies(self) test:
 apoc = zombie.Apocalypse(5, 5)
 apoc.add_human(1, 1)
 apoc.add_human(2, 2)
-print apoc
-print
+suite.run_test(apoc.get_humans(), [(1, 1), (2, 2)], "Test #7a: add_human()")
 apoc.add_human(1, 1)
-print apoc
+suite.run_test(apoc.get_humans(), [(1, 1), (2, 2)], "Test #7b: add_human()")
 
 suite.report_results()
 
