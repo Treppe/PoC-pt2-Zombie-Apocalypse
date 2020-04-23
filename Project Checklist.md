@@ -43,47 +43,47 @@ Return the number of zombies in the zombie list.
 
 Generator that allows you to iterate over zombies in the zombie list. Here, a zombie is a tuple of the form (row,col) indicating the zombie's location in the grid. The generator **must** yield the zombies in the order they were added (even if they have moved). Remember that you can use a generator to implement this method in one or two lines of code.
 
-- [ ] 4.1. Implement test for method
-- [ ] 4.2. Implement method
-- [ ] 4.3. Test method
-- [ ] 4.4. Fix bugs
-- [ ] 4.5. Commit changes
+- [x] 4.1. Implement test for method
+- [x] 4.2. Implement method
+- [x] 4.3. Test method
+- [x] 4.4. Fix bugs
+- [x] 4.5. Commit changes
 
 ### 5. def add_human(self,row,col)
 
  Add a human to the human list at the supplied row and column.
 
-- [ ] 5.1. Implement test for method
-- [ ] 5.2. Implement method
-- [ ] 5.3. Test method
-- [ ] 5.4. Fix bugs
-- [ ] 5.5. Commit changes
+- [x] 5.1. Implement test for method
+- [x] 5.2. Implement method
+- [x] 5.3. Test method
+- [x] 5.4. Fix bugs
+- [x] 5.5. Commit changes
 
 ### 6. def num_humans(self)
 
 Return the number of humans in the human list.
 
-- [ ] 6.1. Implement test for method
-- [ ] 6.2. Implement method
-- [ ] 6.3. Test method
-- [ ] 6.4. Fix bugs
-- [ ] 6.5. Commit changes
+- [x] 6.1. Implement test for method
+- [x] 6.2. Implement method
+- [x] 6.3. Test method
+- [x] 6.4. Fix bugs
+- [x] 6.5. Commit changes
 
 ### 7. def humans(self)
 
  Generator that allows you to iterate over humans in the human list. The generator **must** yield the humans in the order they were added (even if they have moved). Again, you can use a generator to implement this method in one or two lines of code.
 
-- [ ] 7.1. Implement test for method
-- [ ] 7.2. Implement method
-- [ ] 7.3. Test method
-- [ ] 7.4. Fix bugs
-- [ ] 7.5. Commit changes
+- [x] 7.1. Implement test for method
+- [x] 7.2. Implement method
+- [x] 7.3. Test method
+- [x] 7.4. Fix bugs
+- [x] 7.5. Commit changes
 
 ### 8. Phase 1 - Final
 
-- [ ] 8.1. Test all functions
-- [ ] 8.2. Test class in OwlTest
-- [ ] 8.3. Fix bugs
+- [x] 8.1. Test all functions
+- [x] 8.2. Test class in OwlTest
+- [x] 8.3. Fix bugs
 - [ ] 8.4. Commit and push Phase 1
 
 ## Phase 2
