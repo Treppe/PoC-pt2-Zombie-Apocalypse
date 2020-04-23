@@ -87,7 +87,8 @@ class Apocalypse(poc_grid.Grid):
         """
         Add human to the human list
         """
-        pass
+        if (row, col) not in self._human_list:
+            self._human_list.append((row, col))
         
     def num_humans(self):
         """

@@ -4,7 +4,7 @@ https://docs.python.org/2/library/unittest.html
 Note that code is designed to be much simpler than unittest
 and does NOT replicate unittest functionality
 """
-import user47_lJ2dChjO1O_8 as zombie
+import user47_lJ2dChjO1O_9 as zombie
 
 class TestSuite:
     """
@@ -28,7 +28,6 @@ class TestSuite:
             msg = message + " Computed: " + str(computed)
             msg += " Expected: " + str(expected)
             print msg
-            print
             self.failures += 1
     
     def report_results(self):
@@ -79,7 +78,7 @@ suite.run_test(apoc.zombies(), None, "Test 6a: zombies()")
 apoc.add_zombie(1, 1)
 apoc.add_zombie(2 ,2)
 apoc.add_zombie(3, 3)
-suite.run_test(apoc.zombies(), [(1, 1), (2, 2), (3, 3)]), "Test 6b: zombie()"
+suite.run_test(apoc.zombies(), [(1, 1), (2, 2), (3, 3)], "Test 6b: zombie()")
 
 # def zombies(self) test:
 apoc = zombie.Apocalypse(5, 5)
