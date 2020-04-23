@@ -101,7 +101,8 @@ class Apocalypse(poc_grid.Grid):
         Generator that yields the humans in the order they were added.
         """
         # replace with an actual generator
-        return
+        for human in self._human_list:
+            yield human
         
     def compute_distance_field(self, entity_type):
         """
