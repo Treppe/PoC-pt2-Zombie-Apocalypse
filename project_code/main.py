@@ -151,6 +151,8 @@ class Apocalypse(poc_grid.Grid):
                     visited.set_full(neighbour_cell[0], neighbour_cell[1])
                     boundary.enqueue(neighbour_cell)
                     distance_field[neighbour_cell[0]][neighbour_cell[1]] = distance_field[current_cell[0]][current_cell[1]] + 1
+                    
+        return distance_field
             
 
         
