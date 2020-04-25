@@ -84,6 +84,31 @@ Return the number of humans in the human list.
 - [x] 8.1. Test all functions
 - [x] 8.2. Test class in OwlTest
 - [x] 8.3. Fix bugs
-- [ ] 8.4. Commit and push Phase 1
+- [x] 8.4. Commit and push Phase 1
 
-## Phase 2
+## Phase 2 - Breadth-First Search
+
+ Compute a simple approximation of the distance from each cell in the grid to the nearest zombie (or human). This distance will correspond to the length of the *shortest* sequence of adjacent grid cells (a path) from the cell to a zombie. This 2D array of integer distances is a *distance field*.
+
+### def compute_distance_field(self, entity_type)
+
+This method returns a 2D distance field computed using the four-way distance to entities of the given type (either ZOMBIE or HUMAN). Note that entries of the computed distance fields should be zero at the entities in the specified list. Non-zero distances should be computed using the shortest path computation based on breadth-first search . These shortest paths should avoid impassable cells.
+
+#### Breadth-First Search – High-Level description
+
+```python
+while boundary is not empty:
+    current_cell  ←  dequeue boundary
+    for all neighbor_cell of current_cell:
+        if neighbor_cell is not in visited:
+            add neighbor_cell to visited
+            enqueue neighbor_cell onto boundary
+```
+
+### Breadth-First Search Implementing Steps
+
+- [x] Create a new grid visited of the same size as the original grid and initialize its cells to be empty.
+- [x] Create a 2D list distance_field of the same size as the original grid and initialize each of its entries to be the product of the height times the width of the grid. (This value is larger than any possible distance.)
+- [x] Create a queue boundary that is a **copy** of either the zombie list or the human list. For cells in the queue, initialize visited to be FULL and distance_field to be zero. We recommend that you use our [Queue class](http://www.codeskulptor.org/#poc_queue.py).
+- [x] Finally, implement a modified version of the BFS search described above. For each neighbor_cell in the inner loop, check whether the cell has not been visited and is passable. If so, update the visited grid and the boundary queue as specified. In this case, also update the neighbor's distance to be the distance to current_cell plus one ($\color{red}{\verb|distance_field[current_cell[0]][current_cell[1]] + 1|}$)
+
