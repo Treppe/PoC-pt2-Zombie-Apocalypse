@@ -4,7 +4,7 @@ https://docs.python.org/2/library/unittest.html
 Note that code is designed to be much simpler than unittest
 and does NOT replicate unittest functionality
 """
-import user47_lJ2dChjO1O_12 as zombie
+import user47_xAUwGau6x7_6 as zombie
 
 class TestSuite:
     """
@@ -101,6 +101,34 @@ apoc.add_human(1, 1)
 apoc.add_human(2 ,2)
 apoc.add_human(3, 3)
 suite.run_test(list(apoc.humans()), [(1, 1), (2, 2), (3, 3)], "Test 9b: humans()")
+
+# def move_humans(self, zombie_distance_field):
+apoc = zombie.Apocalypse(4, 4, obstacle_list = [(0, 1), (0, 2), (1, 2)])
+apoc.add_human(1, 1)
+apoc.add_zombie(3, 3)
+zombie_field = apoc.compute_distance_field(zombie.ZOMBIE)
+expected = [[6, 5, 4, 3],
+          [5, 4, 3, 2],
+          [4, 3, 2, 1],
+          [3, 2, 1, 0]]
+suite.run_test(zombie_field, expected, "Test 10a: compute_distance_field(ZOMBIE)")
+
+apoc.add_zombie(0, 0)
+zombie_field = apoc.compute_distance_field(zombie.ZOMBIE)
+expected = [[0, 1, 2, 3],
+            [1, 2, 3, 2],
+            [2, 3, 2, 1],
+            [3, 2, 1, 0]]
+suite.run_test(zombie_field, expected, "Test 10b: compute_distance_field(2 ZOMBIE)")
+
+apoc.add_human(2, 2)
+human_field = apoc.compute_distance_field(zombie.HUMAN)
+expected = [[1, 1, 1, 2],
+            [1, 0, 1, 1],
+            [1, 1, 0, 1],
+            [2, 1, 1, 1]]
+suite.run_test(human_field, expected, "Test 10c: compute_distance_field(2 HUMAN)")
+
 
 
 suite.report_results()
