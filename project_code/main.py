@@ -105,7 +105,6 @@ class Apocalypse(poc_grid.Grid):
         """
         Generator that yields the humans in the order they were added.
         """
-        # replace with an actual generator
         for human in self._human_list:
             yield human
         
@@ -147,11 +146,10 @@ class Apocalypse(poc_grid.Grid):
                 neighbour_list = visited.eight_neighbors(current_cell[0], current_cell[1])
                 
             for neighbour_cell in neighbour_list:
-                if not visited.is_empty(neighbour_cell[0], neighbour_cell[1]):
+                if visited.is_empty(neighbour_cell[0], neighbour_cell[1]):
                     visited.set_full(neighbour_cell[0], neighbour_cell[1])
                     boundary.enqueue(neighbour_cell)
-                    distance_field[neighbour_cell[0]][neighbour_cell[1]] = distance_field[current_cell[0]][current_cell[1]] + 1
-                    
+                    distance_field[neighbour_cell[0]][neighbour_cell[1]] = distance_field[current_cell[0]][current_cell[1]] + 1       
         return distance_field
             
 
@@ -163,8 +161,24 @@ class Apocalypse(poc_grid.Grid):
         Function that moves humans away from zombies, diagonal moves
         are allowed
         """
-        pass
-    
+        for human in self._human_list:
+            human_idx = self._human_list.index(human)
+            max_dist = zombie_distance_field[human[0]][human[1]]
+            best_cells = [human]
+            
+            for neighbour_cell in poc_grid.Grid.eight_neighbors(self, human[0], human[1]):
+                if poc_grid.Grid.is_empty(self, neighbour_cell[0], neighbour_cell[1]):
+                    dist_in_cell = zombie_distance_field[neighbour_cell[0]][neighbour_cell[1]]
+                    
+                    # Assign new best cells or add cell to current best
+                    if dist_in_cell > max_dist:
+                        best_cells = [neighbour_cell]
+                        max_dist = dist_in_cell
+                    elif dist_in_cell == max_dist:
+                        best_cells.append(neighbour_cell)
+            
+            self._human_list[human_idx] = random.choice(best_cells)
+            
     def move_zombies(self, human_distance_field):
         """
         Function that moves zombies towards humans, no diagonal moves
