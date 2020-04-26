@@ -140,22 +140,15 @@ class Apocalypse(poc_grid.Grid):
         # Modified version of BFS search
         while len(boundary) != 0:
             current_cell = boundary.dequeue()
-            if entity_type == ZOMBIE:
+            if poc_grid.Grid.is_empty(self, current_cell[0], current_cell[1]):
                 neighbour_list = visited.four_neighbors(current_cell[0], current_cell[1])
-            else:
-                neighbour_list = visited.eight_neighbors(current_cell[0], current_cell[1])
-                
-            for neighbour_cell in neighbour_list:
-                if visited.is_empty(neighbour_cell[0], neighbour_cell[1]):
-                    visited.set_full(neighbour_cell[0], neighbour_cell[1])
-                    boundary.enqueue(neighbour_cell)
-                    distance_field[neighbour_cell[0]][neighbour_cell[1]] = distance_field[current_cell[0]][current_cell[1]] + 1       
+                for neighbour_cell in neighbour_list:
+                    if visited.is_empty(neighbour_cell[0], neighbour_cell[1]):
+                        visited.set_full(neighbour_cell[0], neighbour_cell[1])
+                        boundary.enqueue(neighbour_cell)
+                        distance_field[neighbour_cell[0]][neighbour_cell[1]] = distance_field[current_cell[0]][current_cell[1]] + 1       
         return distance_field
-            
-
         
-                
-    
     def move_humans(self, zombie_distance_field):
         """
         Function that moves humans away from zombies, diagonal moves
