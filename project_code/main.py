@@ -184,7 +184,23 @@ class Apocalypse(poc_grid.Grid):
         Function that moves zombies towards humans, no diagonal moves
         are allowed
         """
-        pass
+        for zombie in self._zombie_list:
+            zombie_idx = self._zombie_list.index(zombie)
+            min_dist = human_distance_field[zombie[0]][zombie[1]]
+            best_cells = [zombie]
+            
+            for neighbour_cell in poc_grid.Grid.four_neighbors(self, zombie[0], zombie[1]):
+                if poc_grid.Grid.is_empty(self, neighbour_cell[0], neighbour_cell[1]):
+                    dist_in_cell = human_distance_field[neighbour_cell[0]][neighbour_cell[1]]
+                    
+                    # Assign new best cells or add cell to current best
+                    if dist_in_cell < min_dist:
+                        best_cells = [neighbour_cell]
+                        min_dist = dist_in_cell
+                    elif dist_in_cell == min_dist:
+                        best_cells.append(neighbour_cell)
+            
+            self._zombie_list[zombie_idx] = random.choice(best_cells)
 
 # Start up gui for simulation - You will need to write some code above
 # before this will work without errors
