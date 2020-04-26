@@ -112,3 +112,26 @@ while boundary is not empty:
 - [x] Create a queue boundary that is a **copy** of either the zombie list or the human list. For cells in the queue, initialize visited to be FULL and distance_field to be zero. We recommend that you use our [Queue class](http://www.codeskulptor.org/#poc_queue.py).
 - [x] Finally, implement a modified version of the BFS search described above. For each neighbor_cell in the inner loop, check whether the cell has not been visited and is passable. If so, update the visited grid and the boundary queue as specified. In this case, also update the neighbor's distance to be the distance to current_cell plus one ($\color{red}{\verb|distance_field[current_cell[0]][current_cell[1]] + 1|}$)
 
+## Phase 3 - Update Positions
+
+In phase three, your task is to implement two final methods that update the positions of the zombies and humans, respectively
+
+### def  move_humans(self,zombie_distance_field)
+
+This method updates the entries in the human list to model humans avoiding zombies. Each human either stays in its current cell or moves to a neighboring cell to maximize its distance from the zombies. Specifically, humans move to a cell that maximize their distance from the zombies according to the supplied $ \color{red}{\verb|zombie_distance_field|}$. In the case where several cells shared the same maximal distance, we recommend (but do not require) choosing among these cells at random.
+
+- [x] Implement test for method
+- [x] Implement method
+- [x] Test method
+- [x] Fix bugs
+- [x] Commit changes
+
+### def move_zombies(self,human_distance_field)
+
+This method updates the entries in the zombie list to model zombies chasing humans. Each zombie either stays in its current cell or moves to a neighboring cell to minimize its distance to the humans. Specifically, zombies moves to the cell that minimizes their distance to the humans according to the supplied $\color{red}{\verb|human_distance_field|}$. In the case where several cells shared the same minimal distance, we recommend choosing (but do not require) among these cells at random.
+
+- [x] Implement test for method
+- [x] Implement method
+- [x] Test method
+- [x] Fix bugs
+- [x] Commit changes
