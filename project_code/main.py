@@ -115,8 +115,8 @@ class Apocalypse(poc_grid.Grid):
         Shortest paths avoid obstacles and use four-way distances
         """
         # Get Apocalypse grid width and height
-        grid_height = poc_grid.Grid.get_grid_height(self)
-        grid_width = poc_grid.Grid.get_grid_width(self)
+        grid_height = self.get_grid_height()
+        grid_width = self.get_grid_width()
         
         # Create a grid of visited cells
         visited = poc_grid.Grid(grid_height, grid_width)
@@ -135,18 +135,19 @@ class Apocalypse(poc_grid.Grid):
         for entity in list_copy:
             boundary.enqueue(entity)
             visited.set_full(entity[0], entity[1])
-            distance_field[entity[0]][entity[1]] = 0
+            if self.is_empty(entity[0], entity[1]):
+                distance_field[entity[0]][entity[1]] = 0
             
         # Modified version of BFS search
         while len(boundary) != 0:
             current_cell = boundary.dequeue()
-            if poc_grid.Grid.is_empty(self, current_cell[0], current_cell[1]):
-                neighbour_list = visited.four_neighbors(current_cell[0], current_cell[1])
-                for neighbour_cell in neighbour_list:
-                    if visited.is_empty(neighbour_cell[0], neighbour_cell[1]):
-                        visited.set_full(neighbour_cell[0], neighbour_cell[1])
-                        boundary.enqueue(neighbour_cell)
-                        distance_field[neighbour_cell[0]][neighbour_cell[1]] = distance_field[current_cell[0]][current_cell[1]] + 1       
+            neighbour_list = visited.four_neighbors(current_cell[0], current_cell[1])
+            for neighbour_cell in neighbour_list:
+                if (self.is_empty(neighbour_cell[0], neighbour_cell[1]) and 
+                    visited.is_empty(neighbour_cell[0], neighbour_cell[1])): 
+                    visited.set_full(neighbour_cell[0], neighbour_cell[1])
+                    boundary.enqueue(neighbour_cell)
+                    distance_field[neighbour_cell[0]][neighbour_cell[1]] = distance_field[current_cell[0]][current_cell[1]] + 1       
         return distance_field
         
     def move_humans(self, zombie_distance_field):
