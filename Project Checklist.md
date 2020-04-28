@@ -1,7 +1,9 @@
 # Project Checklist
 
-[Phase 1 - Apocalypse class](#Phase-1—Apocalypse-Class)
-		[Phase 2](#Phase-2)
+[Phase 1 - Apocalypse class](#Phase 1 - Apocalypse Class)
+		[Phase 2 - Breadth-First Search](#Phase 2 - Breadth-First Search)
+
+[Phase 3 - Update Positions](#Phase 3 - Update Positions)
 
 ## Phase 1 - Apocalypse Class
 
@@ -135,3 +137,8 @@ This method updates the entries in the zombie list to model zombies chasing huma
 - [x] Test method
 - [x] Fix bugs
 - [x] Commit changes
+
+[#Phase 3 - Update Positions]: 
+
+[#Phase 3 - Update Positions]: 
+[#Phase-3 —Update-Positions]: 
