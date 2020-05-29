@@ -1,6 +1,6 @@
 # Zombie Apocalypse (mini-project)
 
-My implemetation of Mini-project #5 - Cookie Clicker for course "[Principles of Computing (Part 2)](https://www.coursera.org/learn/principles-of-computing-2?specialization=computer-fundamentals)" by RICE University on Coursera.
+My implemetation of Mini-project #6 - Zombiie Apocalypse for course "[Principles of Computing (Part 2)](https://www.coursera.org/learn/principles-of-computing-2?specialization=computer-fundamentals)" by RICE University on Coursera.
 
 ### Overview (from course project description page)
 
